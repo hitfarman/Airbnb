@@ -9,8 +9,8 @@ const RoomItem = memo((props) => {
 
   return (
     <ItemWrapper 
-      verifyColor={itemData.verify_info?.text_color || "#39576a"}
-      extraColor={itemData.bottom_info?.content_color}
+      verifyColor={itemData.verify_info?.text_color ?? "#39576a"}
+      extraColor={ itemData.bottom_info?.content_color ?? ((props) => props.theme.text.primaryColor) }
     >
       <div className='inner'>
         <div className='cover'>

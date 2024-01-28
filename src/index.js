@@ -9,7 +9,7 @@ import App from '@/App'
 import 'normalize.css'
 import './assets/css/index.less'
 import store from './store'
-import theme, { MuiTheme } from './assets/theme'
+import theme from './assets/theme'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,9 +17,7 @@ root.render(
     <Provider store={store}>
       <ThemeProvider theme={theme}>
         <HashRouter>
-          <ThemeProvider theme={MuiTheme}>
-            <App />
-          </ThemeProvider>
+          <App />
         </HashRouter>
       </ThemeProvider>
     </Provider>

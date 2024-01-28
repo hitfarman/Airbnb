@@ -1,6 +1,6 @@
 import { createTheme } from '@mui/material'
 
-const theme = {
+export const theme = createTheme({
   color: {
     primaryColor: "#ff385c",
     secondaryColor: "#00848a"
@@ -17,10 +17,8 @@ const theme = {
         box-shadow: 0 2px 4px rgba(0,0,0,.18);
       }
     `
-  }
-}
-
-export const MuiTheme = createTheme({
+  },
+  // material UI theme
   palette: {
     mode: "dark",
   },
