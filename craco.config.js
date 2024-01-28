@@ -9,7 +9,7 @@ module.exports = {
   // less
   plugins: [
     {
-      plugin: CracoLessPlugin
+      plugin: CracoLessPlugin,
     },
   ],
   // webpack中配置别名alias
@@ -20,8 +20,8 @@ module.exports = {
       // "@": "src",
       "@": resolve("src"),
       "components": resolve("src/components"),
-      "utils": resolve("src/utils")
+      "utils": resolve("src/utils"),
+      '@mui/styled-engine': '@mui/styled-engine-sc'
     }
   }
-
 }
