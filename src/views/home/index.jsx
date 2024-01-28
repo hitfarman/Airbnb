@@ -5,7 +5,7 @@ import { HomeWrapper } from './style'
 import HomeBanner from './c-cpns/home-banner'
 import { fetchHomeDataAction } from '@/store/modules/home'
 import SectionHeader from '@/components/section-header'
-import SectionRooms from '@/components/section-rooms'
+import SectionRoomList from '@/components/section-room-list'
 
 const Home = memo(() => {
   /** 从redux中获取数据: useSelector返回一个state, 直接结构,就可以拿到state中的数据了 */
@@ -27,7 +27,7 @@ const Home = memo(() => {
         <div className='content'>
           <div className='good-price'>
             <SectionHeader title={goodPriceInfo.title}/>
-            <SectionRooms roomList={goodPriceInfo.list}/>
+            <SectionRoomList roomList={goodPriceInfo.list}/>
           </div>
         </div>
       </HomeWrapper>

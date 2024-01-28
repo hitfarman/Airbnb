@@ -2,13 +2,13 @@ import PropTypes from 'prop-types'
 import React, { memo } from 'react'
 
 import RoomItem from '../room-item'
-import { RoomsWrapper } from './style'
+import { RoomListWrapper } from './style'
 
-const SectionRooms = memo((props) => {
+const SectionRoomList = memo((props) => {
   const { roomList = [] } = props
 
   return (
-    <RoomsWrapper>
+    <RoomListWrapper>
       {
         roomList.slice(0, 8).map(item => {
           return (
@@ -16,12 +16,12 @@ const SectionRooms = memo((props) => {
           )
         })
       }
-    </RoomsWrapper>
+    </RoomListWrapper>
   )
 })
 
-SectionRooms.propTypes = {
+SectionRoomList.propTypes = {
   roomList: PropTypes.array
 }
 
-export default SectionRooms
+export default SectionRoomList
