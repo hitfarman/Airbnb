@@ -5,10 +5,11 @@ import { Rating } from '@mui/material'
 import { ItemWrapper } from './style'
 
 const RoomItem = memo((props) => {
-  const { itemData } = props
+  const { itemData, itemWidth = "25%" } = props
 
   return (
     <ItemWrapper 
+      itemWidth={itemWidth}
       verifyColor={itemData.verify_info?.text_color ?? "#39576a"}
       extraColor={ itemData.bottom_info?.content_color ?? ((props) => props.theme.text.primaryColor) }
     >
@@ -41,7 +42,8 @@ const RoomItem = memo((props) => {
 })
 
 RoomItem.propTypes = {
-  itemData: PropTypes.object
+  itemData: PropTypes.object,
+  itemWidth: PropTypes.string
 }
 
 export default RoomItem

@@ -11,3 +11,9 @@ export function getHomeHighScoreData() {
     url: "/home/highscore"
   })
 }
+
+export function getHomeDiscountData() {
+  return airbnbRequest.get({
+    url: "/home/discount"
+  })
+}

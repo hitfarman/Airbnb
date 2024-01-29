@@ -9,7 +9,8 @@ export const HeaderWrapper = styled.div`
   .title {
     font-size: 22px;
     font-weight: 700;
-    margin-bottom: 16px;
+    /* margin-bottom: 16px; */
+    margin-bottom: 10px;
   }
 
   .subtitle {

@@ -3,8 +3,7 @@ import React, { memo, useState } from 'react'
 import { HeaderWrapper } from './style'
 
 const SectionHeader = memo((props) => {
-  const [showArrow, setShowArrow] = useState(true)
-
+  const [showArrow, setShowArrow] = useState(false)
   const { title, subtitle } = props
 
   return (
