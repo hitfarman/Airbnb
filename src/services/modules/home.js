@@ -17,3 +17,21 @@ export function getHomeDiscountData() {
     url: "/home/discount"
   })
 }
+
+export function getHomeHotRecommendData() {
+  return airbnbRequest.get({
+    url: "/home/hotrecommenddest"
+  })
+}
+
+export function getHomeLongForData() {
+  return airbnbRequest.get({
+    url: "/home/longfor"
+  })
+}
+
+export function getHomePlusData() {
+  return airbnbRequest.get({
+    url: "/home/plus"
+  })
+}

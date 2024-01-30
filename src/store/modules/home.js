@@ -1,4 +1,11 @@
-import { getHomeDiscountData, getHomeGoodPriceData, getHomeHighScoreData } from "@/services";
+import { 
+  getHomeDiscountData, 
+  getHomeGoodPriceData, 
+  getHomeHighScoreData, 
+  getHomeHotRecommendData, 
+  getHomeLongForData, 
+  getHomePlusData
+} from "@/services";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 /** 去掉 extraReducers后,如何把在这里拿到的结果放到对应的store的state里呢? 
@@ -25,6 +32,17 @@ export const fetchHomeDataAction = createAsyncThunk("fetchdata", (payload, {disp
     dispatch(changeDiscountInfoAction(res))
   })
 
+  getHomeHotRecommendData().then(res => {
+    dispatch(changeHotRecommendInfoAction(res))
+  })
+
+  getHomeLongForData().then(res => {
+    dispatch(changeLongForInfoAction(res))
+  })
+
+  getHomePlusData().then(res => {
+    dispatch(changePlusInfoAction(res))
+  })
 })
 
 const homeSlice = createSlice({
@@ -36,6 +54,9 @@ const homeSlice = createSlice({
     goodPriceInfo: {},
     highScoreInfo: {},
     discountInfo: {},
+    hotRecommendInfo: {},
+    longForInfo: {},
+    plusInfo: {}
   },
   reducers: {
     changeGoodPriceInfoAction(state, { payload }) {
@@ -46,6 +67,15 @@ const homeSlice = createSlice({
     },
     changeDiscountInfoAction(state, { payload }) {
       state.discountInfo = payload
+    },
+    changeHotRecommendInfoAction(state, { payload }) {
+      state.hotRecommendInfo = payload
+    },
+    changeLongForInfoAction(state, { payload }) {
+      state.longForInfo = payload
+    },
+    changePlusInfoAction(state, { payload }) {
+      state.plusInfo = payload
     }
   },
   // extraReducers: (builder) => {
@@ -58,7 +88,9 @@ export const {
   changeGoodPriceInfoAction, 
   changeHighScoreInfoAction,
   changeDiscountInfoAction,
-
+  changeHotRecommendInfoAction,
+  changeLongForInfoAction,
+  changePlusInfoAction
 } = homeSlice.actions
 
 export default homeSlice.reducer

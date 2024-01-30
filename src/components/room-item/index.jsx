@@ -5,7 +5,7 @@ import { Rating } from '@mui/material'
 import { ItemWrapper } from './style'
 
 const RoomItem = memo((props) => {
-  const { itemData, itemWidth = "25%" } = props
+  const { itemData, itemWidth } = props
 
   return (
     <ItemWrapper 

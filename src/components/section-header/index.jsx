@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { memo, useState } from 'react'
 import { HeaderWrapper } from './style'
+import IconMoreArrow from '@/assets/svg/icon-more-arrow'
 
 const SectionHeader = memo((props) => {
   const [showArrow, setShowArrow] = useState(false)
@@ -16,7 +17,7 @@ const SectionHeader = memo((props) => {
         { subtitle && <div className='subtitle'>{subtitle}</div> }
       </div>
       {
-        showArrow && (<div className='arrow'>&gt;</div>)
+        showArrow && (<div className='arrow'><IconMoreArrow/></div>)
       }
     </HeaderWrapper>
   )
