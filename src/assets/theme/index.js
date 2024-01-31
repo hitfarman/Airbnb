@@ -20,24 +20,24 @@ export const theme = createTheme({
   },
   // material UI theme
   palette: {
-    mode: "dark",
+    mode: "light",
   },
-  components: {
-    MuiDataGrid: {
-      styleOverrides: {
-        root: {
-          border: 1,
-          borderColor: "#C1C2C5",
-          borderStyle: "solid",
-          borderRadius: 10,
-          boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.25)",
-          backgroundColor: "#C1C2C5",
-          color: "#C1C2C5",
-          padding: 10,
-        },
-      },
-    },
-  },
+  // components: {
+  //   MuiDataGrid: {
+  //     styleOverrides: {
+  //       root: {
+  //         border: 1,
+  //         borderColor: "#C1C2C5",
+  //         borderStyle: "solid",
+  //         borderRadius: 10,
+  //         boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.25)",
+  //         backgroundColor: "#C1C2C5",
+  //         color: "#C1C2C5",
+  //         padding: 10,
+  //       },
+  //     },
+  //   },
+  // },
 });
 
 export default theme
