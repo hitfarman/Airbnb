@@ -1,18 +1,13 @@
 import React, { memo } from 'react'
 import { DetailWrapper } from './style'
-import { useParams } from 'react-router-dom'
-import { shallowEqual, useSelector } from 'react-redux'
+import DetailPictures from './c-cpns/detail-pictures'
+import DetailInfos from './c-cpns/detail-infos'
 
 const Detail = memo(() => {
-  const { detailInfo } = useSelector(state => ({
-    detailInfo: state.detail.detailInfo
-  }), shallowEqual)
-  const params = useParams()
-  
   return (
     <DetailWrapper>
-      { params.id }
-      { detailInfo.name }
+      <DetailPictures/>
+      <DetailInfos/>
     </DetailWrapper>
   )
 })

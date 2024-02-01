@@ -28,15 +28,18 @@ const MyPagination = styled(Pagination)({
   //Some classes are MuiPaginationItem-root, MuiPaginationItem-page and Mui-selected
 });
 
+/** 每页显示的条目数 */
+const pageSize = 20
+
 const EntirePagination = memo((props) => {
   const { currentPage, totalCount, roomList } = useSelector((state) => ({
     currentPage: state.entire.currentPage,
     totalCount: state.entire.totalCount,
     roomList: state.entire.roomList
   }), shallowEqual)
-  const totalPage = Math.ceil(totalCount / 20)
-  const startCount = currentPage * 20 + 1
-  const endCount = (currentPage + 1) * 20
+  const totalPage = Math.ceil(totalCount / pageSize)
+  const startCount = currentPage * pageSize + 1
+  const endCount = (currentPage + 1) * pageSize
 
   /** 事件处理逻辑 */
   const dispatch = useDispatch()
