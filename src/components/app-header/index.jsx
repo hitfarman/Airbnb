@@ -13,7 +13,6 @@ const AppHeader = memo(() => {
   }), shallowEqual)
 
   const { isFixed } = headerConfig
-  console.log(isFixed)
 
   return (
     <HeaderWrapper className={classNames({ fixed: isFixed })}>
