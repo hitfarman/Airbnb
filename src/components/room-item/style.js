@@ -48,7 +48,6 @@ export const ItemWrapper = styled.div`
     .indicator {
       position: absolute;
       z-index: 9;
-      display: flex;
       bottom: 10px;
       left: 0;
       right: 0;
@@ -128,9 +127,5 @@ export const ItemWrapper = styled.div`
 
     .extra {
       color: ${props => props.extraColor};
-    }
-
-    .MuiRating-decimal {
-      margin-right: -3px;
     }
   }`

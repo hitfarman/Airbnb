@@ -10,6 +10,14 @@ import Indicator from '@/base-ui/indicator';
 import classNames from 'classnames';
 import { useDispatch } from 'react-redux';
 import { changeDetailInfoAction } from '@/store/modules/detail';
+import { styled } from 'styled-components';
+
+//Make a styled Rating component using styled API that overrides default style
+const MyRating = styled(Rating)({
+  '& .MuiRating-decimal': {
+    marginRight: '-2px'
+  }
+})
 
 const RoomItem = memo((props) => {
   /** 只有点击entire页面中的item才跳转到详情detail页面, 首页中点击item因为没有那么多picture,不跳转detail
@@ -23,12 +31,13 @@ const RoomItem = memo((props) => {
   const dispatch = useDispatch()
   
   /** 事件处理的逻辑 */
-  function controlClickHandle(isRight) {
+  function controlClickHandle(event, isNext) {
+    event.stopPropagation()
     // 1. 上一个面板/下一个面板
-    isRight ? sliderRef.current.next() : sliderRef.current.prev()
+    isNext ? sliderRef.current.next() : sliderRef.current.prev()
 
     // 设置最新的索引
-    const newIndex = isRight ? selectIndex + 1 : selectIndex - 1
+    const newIndex = isNext ? selectIndex + 1 : selectIndex - 1
     const length = itemData.picture_urls.length
     setSelectIndex((length + newIndex) % length)
   }
@@ -50,10 +59,10 @@ const RoomItem = memo((props) => {
   const sliderElement = (
     <div className='slider'>
       <div className="control">
-        <div className="btn left" onClick={e => controlClickHandle(false)}>
+        <div className="btn left" onClick={e => controlClickHandle(e, false)}>
           <IconArrowLeft width="30" height="30"/>
         </div>
-        <div className="btn right" onClick={e => controlClickHandle(true)}>
+        <div className="btn right" onClick={e => controlClickHandle(e, true)}>
           <IconArrowRight width={30} height={30}/>
         </div>
       </div>
@@ -103,7 +112,7 @@ const RoomItem = memo((props) => {
         <div className='name'>{itemData.name}</div>
         <div className='price'>￥{itemData.price}/晚</div>
         <div className='bottom'>
-          <Rating
+          <MyRating
             value={itemData.star_rating ?? 5} 
             precision={0.1}
             readOnly 
