@@ -5,6 +5,7 @@ import EntireRooms from './c-cpns/entire-rooms'
 import EntirePagination from './c-cpns/entire-pagination'
 import { fetchEntireRoomListAction } from '@/store/modules/entire/actionCreators'
 import { shallowEqual, useDispatch, useSelector } from 'react-redux'
+import { changeHeaderConfigAction } from '@/store/modules/main'
 
 const Entire = memo(() => {
   const { roomList, totalCount } = useSelector((state) => ({
@@ -16,6 +17,7 @@ const Entire = memo(() => {
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(fetchEntireRoomListAction())
+    dispatch(changeHeaderConfigAction(true))
   }, [dispatch])
 
   return (

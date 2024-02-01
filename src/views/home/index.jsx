@@ -9,6 +9,7 @@ import HomeSectionV2 from './c-cpns/home-section-v2'
 import { isEmptyObject } from '@/utils'
 import HomeLongFor from './c-cpns/home-long-for'
 import HomeSectionV3 from './c-cpns/home-section-v3'
+import { changeHeaderConfigAction } from '@/store/modules/main'
 
 const Home = memo(() => {
   /** 从redux中获取数据 */
@@ -25,13 +26,14 @@ const Home = memo(() => {
     discountInfo: state.home.discountInfo,
     hotRecommendInfo: state.home.hotRecommendInfo,
     longForInfo: state.home.longForInfo,
-    plusInfo: state.home.plusInfo
+    plusInfo: state.home.plusInfo,
   }), shallowEqual)
 
   /** 派发异步事件: 发送网络请求 */
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(fetchHomeDataAction())
+    dispatch(changeHeaderConfigAction(true))
   }, [dispatch])
 
   return (
