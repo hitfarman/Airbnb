@@ -4,7 +4,7 @@ import IconGlobal from '@/assets/svg/icon_global'
 import IconMenu from '@/assets/svg/icon_menu'
 import IconAvatar from '@/assets/svg/icon_avatar'
 
-const HeaderRight = memo(() => {
+const HeaderRight = memo((props) => {
   /** 定义组件内部状态 */
   const [showPanel, setIShowPanel] = useState(false)
 

@@ -15,13 +15,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // 这里要把Provider放到Suspense组件的外面,否则会出现异步懒加载完成切换页面时,Redux没法监听store数据变化
   <Provider store={store}>
-    <Suspense fallback=<h3>loading</h3>>
-      <ThemeProvider theme={theme}>
-        <HashRouter>
-          <App />
-        </HashRouter>
-      </ThemeProvider>
-    </Suspense>
+    <ThemeProvider theme={theme}>
+      <HashRouter>
+        <App />
+      </HashRouter>
+    </ThemeProvider>
   </Provider>
 );
 

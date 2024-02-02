@@ -1,7 +1,5 @@
 import { styled } from "styled-components";
 
-
-
 export const RightWrapper = styled.div`
   flex: 1;
   display: flex;
@@ -13,6 +11,7 @@ export const RightWrapper = styled.div`
   .btns {
     display: flex;
     align-items: center;
+    color: ${props => props.theme.isAlpha ? "#fff": props.theme.text.primaryColor};
 
     .btn {
       height: 18px;
@@ -20,9 +19,9 @@ export const RightWrapper = styled.div`
       padding: 12px 15px;
       cursor: pointer;
       border-radius: 22px;
-
+      
       &:hover {
-        background-color: #f5f5f5;
+        background-color: ${props => props.theme.isAlpha ? "rgba(255,255,255,.1)": "#f5f5f5"};
       }
     }
 

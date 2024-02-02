@@ -8,12 +8,13 @@ const mainSlice = createSlice({
      * 因为,现在是多个页面共有的是同一个header组件,既然要显示的不一样,就要能让不同的页面对header进行配置
     */
     headerConfig: { 
-      isFixed: false
+      isFixed: false,
+      topAlpha: false // 要不要设置顶部透明度,默认false
     }
   },
   reducers: {
     changeHeaderConfigAction(state, { payload }) {
-      state.headerConfig.isFixed = payload
+      state.headerConfig = payload
     }
   }
 })
