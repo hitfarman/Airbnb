@@ -16,6 +16,12 @@ export const theme = createTheme({
       &:hover {
         box-shadow: 0 2px 4px rgba(0,0,0,.18);
       }
+    `,
+    disableSelect: `
+      -webkit-user-select: none;  
+      -moz-user-select: none;    
+      -ms-user-select: none;      
+      user-select: none;
     `
   },
   // material UI theme

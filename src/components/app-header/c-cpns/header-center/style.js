@@ -1,7 +1,17 @@
 import { styled } from "styled-components";
 
 export const CenterWrapper = styled.div`
+  /* 同时设置下面四个:
+      (1) 子绝父相
+      (2) 设置flex布局, 让它在中间 */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 48px;
+
   .search-bar {
+    /* 绝对定位会脱离标准流, 脱离标准流时就可以一个盖在另一个上面, 两个就可以重叠了,因为如果它们两个都在标准流里面,它们必然会相互挤压 */
+    position: absolute; 
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -44,5 +54,43 @@ export const CenterWrapper = styled.div`
       left: 50%;
       transform: translate(-50%);
     }
+  }
+
+  /* 这个动画其实是把两个动画重叠在一起了,所以,看起来像是缩小了 */
+  .detail-exit {
+    transform: scale(1.0)  translateY(0);
+    opacity: 1;
+  }
+
+  .detail-exit-active {
+    transition: all 250ms ease;
+    transform: scale(0.35, 0.727273) translateY(-58px);
+    opacity: 0;
+  }
+
+  .detail-enter {
+    transform: scale(0.35, 0.727273) translateY(-58px);
+    opacity: 0;
+  }
+
+  .detail-enter-active {
+    transform: scale(1.0) translateY(0);
+    opacity: 1;
+    transition: all 250ms ease;
+  }
+
+  .bar-enter {
+    transform: scale(2.85714, 1.375) translateY(58px);
+    opacity: 0;
+  }
+
+  .bar-enter-active {
+    transition: all 250ms ease;
+    transform: scale(1.0) translateY(0);
+    opacity: 1;
+  }
+
+  .bar-exit {
+    opacity: 0;
   }
 `
