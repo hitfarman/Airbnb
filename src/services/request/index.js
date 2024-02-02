@@ -28,5 +28,5 @@ class AirBnbRequest {
   }
 }
 
-
-export default new AirBnbRequest(BASE_URL, TIMEOUT)
+const airBnbRequest = new AirBnbRequest(BASE_URL, TIMEOUT)
+export default airBnbRequest
